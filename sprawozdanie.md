@@ -1,0 +1,1 @@
+![Manjaro_20220323_163318](/home/dominik/Pictures/ScreenShots/Manjaro_20220323_163318.png)

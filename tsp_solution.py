@@ -9,9 +9,9 @@ def random_solution(num_of_vortx):
 def sequential(num_of_vertex):
     return np.arange(1,num_of_vertex+1,1)
 
-def k_random(input_solution, num_of_iter, problem):
-    best_solution = input_solution
-    best = problem.getSolutionLength(input_solution)
+def k_random(problem, num_of_iter=100):
+    best_solution = random_solution(len(problem.graph.nodes))
+    best = problem.getSolutionLength(best_solution)
     for step in range(num_of_iter):
         new_candidate = random_solution(len(problem.graph.nodes))
         current = problem.getSolutionLength(new_candidate)
@@ -71,4 +71,9 @@ def opt2(input_solution, problem):
     return best_solution
 
     
-    
+def opt2random_input(problem):
+    solution = random_solution(len(problem.graph.nodes))
+    return opt2(solution, problem)
+
+def cool_alg(problem):
+    return opt2(better_nearliest_neightboor(problem), problem)
